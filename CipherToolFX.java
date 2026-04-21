@@ -173,28 +173,30 @@ public class CipherToolFX extends Application {
         }
     }
 
+    // Auther: Layan Alaboudi
     private String desEncrypt(String text, String key) throws Exception {
-        SecretKey secretKey = new SecretKeySpec(key.getBytes(), "DES");
-        Cipher cipher = Cipher.getInstance("DES/ECB/PKCS5Padding");
-        cipher.init(Cipher.ENCRYPT_MODE, secretKey);
-        byte[] encrypted = cipher.doFinal(text.getBytes());
+        SecretKey secretKey = new SecretKeySpec(key.getBytes(), "DES"); // key generation
+        Cipher cipher = Cipher.getInstance("DES/ECB/PKCS5Padding"); // create cipher object to select algrithim options
+        cipher.init(Cipher.ENCRYPT_MODE, secretKey); // to select encryption mode, attach the key, and cipher object
+        byte[] encrypted = cipher.doFinal(text.getBytes()); // convort string into bytes
         return Base64.getEncoder().encodeToString(encrypted);
-    }
+    }// end desEncrypt
 
     private String desDecrypt(String base64Text, String key) throws Exception {
-        SecretKey secretKey = new SecretKeySpec(key.getBytes(), "DES");
-        Cipher cipher = Cipher.getInstance("DES/ECB/PKCS5Padding");
-        cipher.init(Cipher.DECRYPT_MODE, secretKey);
-        byte[] decrypted = cipher.doFinal(Base64.getDecoder().decode(base64Text));
+        SecretKey secretKey = new SecretKeySpec(key.getBytes(), "DES"); // key generation
+        Cipher cipher = Cipher.getInstance("DES/ECB/PKCS5Padding"); // create cipher object to select algrithim options
+        cipher.init(Cipher.DECRYPT_MODE, secretKey); // to select decryption mode, attach the key, and cipher object
+        byte[] decrypted = cipher.doFinal(Base64.getDecoder().decode(base64Text)); // decode and decrypt
         return new String(decrypted);
-    }
+    }// end desDecrypt
 
     private void showAlert(String title, String message) {
         Alert alert = new Alert(Alert.AlertType.ERROR, message, ButtonType.OK);
         alert.setHeaderText(title);
         alert.showAndWait();
-    }
+    }// end showAlert
 
+    // Auther: Roaa
     public static String atbash(String input) {
         StringBuilder result = new StringBuilder();
         for (char c : input.toCharArray()) {
@@ -209,6 +211,7 @@ public class CipherToolFX extends Application {
         return result.toString();
     }
 
+    // Auther: Dhay
     private String affineEncrypt(String text, int a, int b) {
         StringBuilder result = new StringBuilder();
         for (char c : text.toCharArray()) {
