@@ -170,9 +170,9 @@ Supervised by: **Reem Kateb**
 |---------|------------------------|---------------|
 | 4450974 | Dhay Nasser Al-Harbi   | Affine Cipher |
 | 4454418 | Layan Faisal Al-Aboudi | DES Cipher    |
-| 4451074 | Leen Ahmed Al-Oufi     | —             |
+| 4451074 | Leen Ahmed Al-Oufi     | Affine Cipher |
 | 4453139 | Roaa Al-Juhani         | Atbash Cipher |
-| 4450562 | Yara Al-Harbi          | —             |
+| 4450562 | Yara Al-Harbi          | Atbash Cipher |
 
 ---
 
